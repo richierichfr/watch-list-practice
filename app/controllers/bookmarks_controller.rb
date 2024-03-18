@@ -7,8 +7,9 @@ class BookmarksController < ApplicationController
 
   def create
     @bookmark = Bookmark.new(bookmarks_params)
+    @bookmark.list = @list
     @bookmark.save
-    # redirect_to bookmark_path
+    redirect_to list_path(@list)
   end
 
   private
