@@ -1,8 +1,10 @@
 <h1>title</h1>
 <%= @list.name %>
 <% @list.movies.each do |movie|%>
-<div class="card">
+<div class="moviecard">
+<%= image_tag(movie.poster_url, alt: "movie picture", class: "card-img-movie")%>
 <%= movie.title %>
+<br>
 <%= movie.overview %>
 </div>
 <% end %>
